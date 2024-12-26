@@ -3,8 +3,11 @@ import { useEffect, useState } from 'react';
 function App() {
   const [weather, setWeather] = useState(null);
 
+  let key = "795ffba897b347c984f215602242412";
+  let lugar = "20.768703,-103.443375";
+
   useEffect(() => {
-    fetch('https://api.weatherapi.com/v1/current.json?key=795ffba897b347c984f215602242412&q=20.768703,-103.443375')
+    fetch(`https://api.weatherapi.com/v1/current.json?key=${key}&q=${lugar}`)
       .then(response => response.json())
       .then(datos => {
         setWeather(datos);
